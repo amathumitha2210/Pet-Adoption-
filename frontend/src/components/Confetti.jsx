@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 const Confetti = () => {
   useEffect(() => {
-    // Simple CSS-based confetti effect
+    
     const container = document.createElement('div');
     container.style.position = 'fixed';
     container.style.top = '0';
@@ -12,7 +12,7 @@ const Confetti = () => {
     container.style.pointerEvents = 'none';
     container.style.zIndex = '1000';
     
-    // Create confetti elements
+    
     for (let i = 0; i < 50; i++) {
       const confetti = document.createElement('div');
       confetti.style.position = 'absolute';
@@ -24,7 +24,7 @@ const Confetti = () => {
       confetti.style.borderRadius = '50%';
       confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
       
-      // Add keyframes dynamically
+     
       const style = document.createElement('style');
       style.innerHTML = `
         @keyframes fall {
@@ -40,7 +40,7 @@ const Confetti = () => {
     
     document.body.appendChild(container);
     
-    // Clean up after animation
+   
     const timer = setTimeout(() => {
       document.body.removeChild(container);
     }, 5000);
