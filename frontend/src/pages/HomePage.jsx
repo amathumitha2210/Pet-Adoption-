@@ -31,7 +31,7 @@ const HomePage = ({ showAlert }) => {
       setShowConfetti(true);
       setTimeout(() => setShowConfetti(false), 3000);
       setCertificatePet(adoptedPet);
-      fetchPets(); // Refresh the pet list
+      fetchPets(); 
     } catch (error) {
       showAlert('Failed to adopt pet', 'danger');
     }
@@ -39,7 +39,7 @@ const HomePage = ({ showAlert }) => {
 
   const handleQuizComplete = (pet) => {
     navigate('/');
-    // You could add scrolling to the pet here if needed
+   
   };
 
   return (
