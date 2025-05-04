@@ -19,14 +19,14 @@ const PetManagementPage = ({ showAlert }) => {
   const [showAddForm, setShowAddForm] = useState(false);
   const navigate = useNavigate();
 
-  // Fetch pets on mount — moods will be as stored in DB
+ 
   useEffect(() => {
-    fetchPets(); // make sure fetchPets returns exact mood from DB
+    fetchPets(); 
   }, [fetchPets]);
 
   const handleAddPet = async (petData) => {
     try {
-      await addPet(petData); // addPet should not modify mood manually
+      await addPet(petData);
       showAlert('Pet added successfully!', 'success');
       setShowAddForm(false);
     } catch (error) {
@@ -40,7 +40,7 @@ const PetManagementPage = ({ showAlert }) => {
       if (!editingPet || !editingPet.id) {
         throw new Error('Invalid pet selected for editing.');
       }
-      await editPet(editingPet.id, petData); // again, no mood manipulation
+      await editPet(editingPet.id, petData);
       showAlert('Pet updated successfully!', 'success');
       setEditingPet(null);
     } catch (error) {
