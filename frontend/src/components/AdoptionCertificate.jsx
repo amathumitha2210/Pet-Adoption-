@@ -2,9 +2,9 @@ import React from 'react';
 import { Button, Modal } from 'react-bootstrap';
 
 const AdoptionCertificate = ({ pet, show, onHide }) => {
-  console.log("Pet Data Received in Modal: ", pet); // Debugging line
+  console.log("Pet Data Received in Modal: ", pet); 
 
-  if (!pet) return null;  // Return null if no pet data
+  if (!pet) return null;  
 
   const adoptionDate = new Date().toLocaleDateString();
 
