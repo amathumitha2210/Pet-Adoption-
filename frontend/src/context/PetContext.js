@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { getPets, createPet, updatePet, deletePet, adoptPet } from '../services/api';
-import moment from 'moment'; // Make sure moment is installed and imported
+import moment from 'moment'; 
 
 const PetContext = createContext();
 
@@ -12,21 +12,21 @@ export const PetProvider = ({ children }) => {
   const [notifications, setNotifications] = useState([]);
 
   const normalizePet = (pet) => {
-    // Calculate the pet mood dynamically based on the creation date
+    
     const now = moment();
     const createdDate = moment(pet.createdAt);
     const daysInSystem = now.diff(createdDate, 'days');
 
-    let mood = 'Happy'; // Default mood
+    let mood = 'Happy'; 
     if (daysInSystem < 1) mood = 'Happy';
     else if (daysInSystem <= 3) mood = 'Excited';
     else mood = 'Sad';
 
     return {
       ...pet,
-      id: pet.id || pet._id, // Normalize ID for consistency
+      id: pet.id || pet._id, 
       imageUrl: pet.imageUrl || '/default-pet.jpg',
-      mood: mood, // Add the calculated mood here
+      mood: mood, 
     };
   };
 
