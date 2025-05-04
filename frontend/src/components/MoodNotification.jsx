@@ -14,7 +14,7 @@ const MoodNotification = ({ pet, onClose }) => {
     <Alert variant="warning" dismissible onClose={onClose} className="fade-in">
       <Alert.Heading>{pet.name} is feeling sad!</Alert.Heading>
       <p>
-        {pet.name} has been waiting for adoption for more than 3 days. 
+        {pet.name} has been waiting for adoption. 
         Consider giving {pet.name.toLowerCase()} a loving home!
       </p>
     </Alert>
