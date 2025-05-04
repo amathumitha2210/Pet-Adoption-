@@ -3,7 +3,7 @@ import { GiRabbit, GiHummingbird } from 'react-icons/gi';
 import { BsEmojiSmile, BsEmojiFrown, BsEmojiAngry } from 'react-icons/bs';
 
 const PetCard = ({ pet, onAdopt, onEdit, onDelete, isManagement = false }) => {
-  // Get the species icon based on the species of the pet
+  
   const getSpeciesIcon = () => {
     switch (pet.species.toLowerCase()) {
       case 'dog': return <FaDog className="me-2" />;
@@ -14,7 +14,7 @@ const PetCard = ({ pet, onAdopt, onEdit, onDelete, isManagement = false }) => {
     }
   };
 
-  // Get the mood badge with appropriate icon and color
+  
   const getMoodBadge = () => {
     const mood = pet.mood.toLowerCase();
     let icon, badgeClass;
@@ -48,16 +48,16 @@ const PetCard = ({ pet, onAdopt, onEdit, onDelete, isManagement = false }) => {
   return (
     <div className="card mb-3 shadow-sm h-100">
       <div className="card-img-top" style={{ height: '200px', overflow: 'hidden' }}>
-        {/* Use the full image URL for the pet */}
+       
         <img
-          src={`http://localhost:5000${pet.image}`}  // Ensure the image path is complete with the base URL
+          src={`http://localhost:5000${pet.image}`}  
           alt={pet.name}
           className="w-100 h-100"
           style={{ 
             objectFit: 'cover',
             transition: 'transform 0.3s ease'
           }}
-          //onError={(e) => e.target.src = 'https://via.placeholder.com/200'}  // Placeholder if image fails to load
+          
           onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
           onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}
         />
